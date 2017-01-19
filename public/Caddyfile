@@ -3,6 +3,6 @@ http://localhost {
 }
 https://localhost {
   gzip
-  tls self_signed
+  tls /Users/Julia/localhost.crt /Users/Julia/localhost.key
   header / Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 }

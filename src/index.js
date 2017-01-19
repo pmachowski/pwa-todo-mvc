@@ -2,13 +2,16 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 import App from './containers/App'
 import reducer from './reducers'
 import { loadState, saveState } from './storage'
+import { initSW } from './init-sw'
 
 import './index.css'
 
+// Initiates Service Worker
+initSW()
 
 // Loads the initial state from local storage
 const initialState = loadState()
@@ -24,8 +27,8 @@ store.subscribe(() => saveState(store.getState()))
 render(
   <Provider store={store}>
     {/* Provider passes the store to child elements through React context
-    Router Creates a router with hash history */}
-    <Router history={hashHistory}>
+    Router Creates a router browserHistory history */}
+    <Router history={browserHistory}>
       {/* path matches "/" and passes the filter
        string from the url (if there is one) in the
        'params' property to our app component */}

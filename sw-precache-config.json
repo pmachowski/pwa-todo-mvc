@@ -1,0 +1,14 @@
+{
+  "importScripts": [
+  ],
+  "staticFileGlobs": [
+    "build/static/css/**.css",
+    "build/static/js/**.js",
+    "build/**.html",
+    "build/**.png",
+    "build/**.svg",
+    "build/**.json"
+  ],
+  "stripPrefix": "build/",
+  "verbose": true
+}
